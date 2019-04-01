@@ -3,13 +3,19 @@
 # IMPORTS
 import hashlib
 import os
+import sys
 
 # FUNCTIONS
 def walkTree(path, level=0):
     if path.endswith('\\'):
         path = path[:-1]
+    
+    try:
+        list=os.listdir(path)
+    except FileNotFoundError as err:
+        print(err.strerror)  
+        quit()
 
-    list=os.listdir(path)
     for elem in list:
         elemPath=path + "\\" + elem
         #hashing 
@@ -25,11 +31,30 @@ def walkTree(path, level=0):
         except IOError as e:
             print('{}{}\t{}'.format(level*"  ", elem.ljust(16), elemPath, elem))
             walkTree(elemPath, level + 1)
-                    
+                           
+def help():
+    print('''
+usage: DirTreeWalk.py [-h] path
+
+
+
+positional argument:
+
+  path        path to show
+
+
+
+optional arguments:
+
+  -h, --help  show this help message and exit
+    ''')
 
 # MAIN
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) > 1:
-        print(sys.argv[1])
+        if (sys.argv[1] == '-h'):
+            help()
+            quit()
         walkTree(sys.argv[1])
+    else:
+        help()
