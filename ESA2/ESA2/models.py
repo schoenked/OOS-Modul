@@ -1,10 +1,10 @@
 from django.db import models
 
-class student(django.models):
+class Student(models.Model):
     forename=models.CharField(max_length=50)
     lastname=models.CharField(max_length=50)
 
-class lehrveranstaltung(django.models):
+class Lehrveranstaltung(models.Model):
     name=models.CharField(max_length=50)
 
 
