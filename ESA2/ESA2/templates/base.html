@@ -3,11 +3,20 @@
 <html lang="de">
 <head>
     <meta charset="utf-8" />
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
     <title>{{ page_title }}</title>
 </head>
 <body>
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
     <h1>{{ page_title }}</h1>
-    {% block_content %}
-    {% endblock}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
