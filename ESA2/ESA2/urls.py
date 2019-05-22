@@ -19,5 +19,7 @@ from ESA2.views import Student
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'students/', Student.get_student_list),
+    path('students/', Student.get_student_list, name='studentList'),
+    path('addStudent/', Student.add_student, name='addStudent'),
+    
 ]
