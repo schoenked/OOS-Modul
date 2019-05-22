@@ -1,0 +1,20 @@
+﻿{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<a href="{% url 'addLehrveranstaltung' %}" class="btn btn-primary">Lehrveranstaltung hinzufügen</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <th>Bezeichnung</th>
+    <th>Bearbeiten</th>
+    <th>Löschen</th>
+    </thead>
+    {% for lv in lehrveranstaltungen %}
+    <tr>
+        <td>{{ lv.bezeichnung }}</td>
+        <td><a href="{% url 'editLehrveranstaltung' pk=lv.pk %}">{% bootstrap_icon 'edit' %}</a></td>
+        <td><a href="{% url 'deleteLehrveranstaltung' pk=lv.pk %}">{% bootstrap_icon 'erase' %}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

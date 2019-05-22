@@ -1,0 +1,10 @@
+﻿{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<a href="{% url 'lvList' %}" class="btn btn-primary">alle Lehrveranstaltungen</a>
+<form enctype="multipart/form-data" method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    <button type="submit" class="btn btn-primary">Speichern</button>
+</form>
+{% endblock %}

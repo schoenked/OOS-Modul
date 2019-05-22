@@ -18,7 +18,7 @@ def student_form(request, pk=None):
     else:
         #load
         student = get_object_or_404(Student,pk=pk)
-        page_title='Student hinzufügen'
+        page_title='Student bearbeiten'
 
     if request.method == 'POST':
         form = StudentForm(request.POST, instance=student)

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ESA2.views import Student
+from ESA2.views import Lehrveranstaltung
 from ESA2.views import Home
 
 urlpatterns = [
@@ -25,5 +26,9 @@ urlpatterns = [
     path('addStudent/', Student.student_form, name='addStudent'),
     path(r'^editStudent/(?<pk>[0-9]+)/?$', Student.student_form, name='editStudent'),
     path(r'^deleteStudent/(?<pk>[0-9]+)/?$', Student.delete, name='deleteStudent'),
-    
+    path('lehrveranstaltungen/', Lehrveranstaltung.get_lv_list, name='lvList'),
+    path('addLehrveranstaltung/', Lehrveranstaltung.lehrveranstaltung_form, name='addLehrveranstaltung'),
+    path(r'^editLehrveranstaltung/(?<pk>[0-9]+)/?$', Lehrveranstaltung.lehrveranstaltung_form, name='editLehrveranstaltung'),
+    path(r'^deleteLehrveranstaltung/(?<pk>[0-9]+)/?$', Lehrveranstaltung.delete, name='deleteLehrveranstaltung'),
+ 
 ]

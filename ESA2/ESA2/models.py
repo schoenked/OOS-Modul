@@ -5,7 +5,7 @@ class Student(models.Model):
     lastname=models.CharField(max_length=50)
 
 class Lehrveranstaltung(models.Model):
-    name=models.CharField(max_length=50)
+    bezeichnung=models.CharField(max_length=50)
 
 
 
