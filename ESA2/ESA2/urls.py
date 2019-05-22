@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ESA2.views import Student
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'students/', Student.get_student_list),
 ]
