@@ -1,24 +1,15 @@
-﻿<!DOCTYPE html>
-
-<html lang="de">
-<head>
-    <meta charset="utf-8" />
-    <title>{{ page_title }}</title>
-</head>
-<body>
-    <h1>{{ page_title }}</h1>
-
-    <table>
-        <thead>
-            <th>Vorname</th>
-            <th>Nachname</th>
-        </thead>
-        {% for student in students %}
-            <tr>
-                <td>{{ student.forename }}</td>
-                <td>{{ student.lastname }}</td>
-            </tr>
-        {% endfor %}
-    </table>    
-</body>
-</html>
+﻿{% extends 'base.html' %}
+{% block content %}
+<table>
+    <thead>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    </thead>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.forename }}</td>
+        <td>{{ student.lastname }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
