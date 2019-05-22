@@ -20,6 +20,7 @@ from ESA2.views import Student
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', Student.get_student_list, name='studentList'),
-    path('addStudent/', Student.add_student, name='addStudent'),
+    path('addStudent/', Student.student_form, name='addStudent'),
+    path(r'^editStudent/(?<pk>[0-9]+)/?$', Student.student_form, name='editStudent'),
     
 ]

@@ -1,4 +1,5 @@
 ﻿{% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block content %}
 <a href="{% url 'addStudent' %}" class="btn btn-primary">Student hinzufügen</a>
 
@@ -6,11 +7,13 @@
     <thead>
     <th>Vorname</th>
     <th>Nachname</th>
+    <th>&nbsp;</th>
     </thead>
     {% for student in students %}
     <tr>
         <td>{{ student.forename }}</td>
         <td>{{ student.lastname }}</td>
+        <td><a href="{% url 'editStudent' pk=student.pk %}">{% bootstrap_icon 'edit' %}</a></td>
     </tr>
     {% endfor %}
 </table>
