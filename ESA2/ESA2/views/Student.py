@@ -32,3 +32,12 @@ def student_form(request, pk=None):
         form = StudentForm(instance=student)
 
     return render(request, 'student.html', {'page_title':page_title, 'form':form})
+
+def delete(request, pk=None):
+    student = get_object_or_404(Student,pk=pk)
+    if student==None:
+        messages.error(request, 'Beim Löschen ist ein Fehler aufgetreten.')
+    else:
+        student.delete()
+        messages.success(request, 'Student gelöscht.')
+        return HttpResponseRedirect(reverse('studentList'))

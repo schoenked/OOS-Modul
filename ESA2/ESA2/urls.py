@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ESA2.views import Student
+from ESA2.views import Home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Home.as_View, name='home'),
     path('students/', Student.get_student_list, name='studentList'),
     path('addStudent/', Student.student_form, name='addStudent'),
     path(r'^editStudent/(?<pk>[0-9]+)/?$', Student.student_form, name='editStudent'),
+    path(r'^deleteStudent/(?<pk>[0-9]+)/?$', Student.delete, name='deleteStudent'),
     
 ]

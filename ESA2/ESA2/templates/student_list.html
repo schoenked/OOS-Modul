@@ -7,13 +7,15 @@
     <thead>
     <th>Vorname</th>
     <th>Nachname</th>
-    <th>&nbsp;</th>
+    <th>Bearbeiten</th>
+    <th>Löschen</th>
     </thead>
     {% for student in students %}
     <tr>
         <td>{{ student.forename }}</td>
         <td>{{ student.lastname }}</td>
         <td><a href="{% url 'editStudent' pk=student.pk %}">{% bootstrap_icon 'edit' %}</a></td>
+        <td><a href="{% url 'deleteStudent' pk=student.pk %}">{% bootstrap_icon 'erase' %}</a></td>
     </tr>
     {% endfor %}
 </table>

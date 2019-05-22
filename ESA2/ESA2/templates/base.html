@@ -13,6 +13,13 @@
 </head>
 <body>
     <div class="container" >
+        <header>
+            Studentenverwaltung
+            <nav>
+                <a href="{% url 'home' %}">{% bootstrap_icon 'home' %}</a>
+            </nav>
+        </header>
+
         {# Display django.contrib.messages as Bootstrap alerts #}
         {% bootstrap_messages %}
 
