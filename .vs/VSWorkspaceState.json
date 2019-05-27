@@ -3,9 +3,10 @@
     "",
     "\\ESA2",
     "\\ESA2\\ESA2",
+    "\\ESA2\\ESA2\\forms",
     "\\ESA2\\ESA2\\templates",
     "\\ESA2\\ESA2\\views"
   ],
-  "SelectedNode": "\\ESA2\\ESA2\\templates\\student_list.html",
+  "SelectedNode": "\\ESA2\\ESA2\\settings.py",
   "PreviewInSolutionExplorer": false
 }
