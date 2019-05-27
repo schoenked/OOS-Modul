@@ -18,9 +18,9 @@ from django.urls import path
 from ESA2.views import Student
 from ESA2.views import Lehrveranstaltung
 from ESA2.views import Home
+from ESA2.views import Einschreiben
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+urlpatterns = [path('admin/', admin.site.urls),
     path('', Home.as_View, name='home'),
     path('students/', Student.get_student_list, name='studentList'),
     path('addStudent/', Student.student_form, name='addStudent'),
@@ -30,5 +30,4 @@ urlpatterns = [
     path('addLehrveranstaltung/', Lehrveranstaltung.lehrveranstaltung_form, name='addLehrveranstaltung'),
     path(r'^editLehrveranstaltung/(?<pk>[0-9]+)/?$', Lehrveranstaltung.lehrveranstaltung_form, name='editLehrveranstaltung'),
     path(r'^deleteLehrveranstaltung/(?<pk>[0-9]+)/?$', Lehrveranstaltung.delete, name='deleteLehrveranstaltung'),
- 
-]
+    path('einschreiben/', Einschreiben.einschreiben_form, name='einschreiben'),]
